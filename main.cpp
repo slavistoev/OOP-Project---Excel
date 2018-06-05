@@ -32,7 +32,6 @@ int excel()
 	char input[MAX];
 	do {
 		while (!isCommand());
-		// разчитаме на правилно въведена команда
 		std::cin.getline(input, MAX);
 		moveInput(input);
 		if (!strstr(input, "exit")
@@ -46,8 +45,6 @@ int excel()
 			continue;
 		}
 
-		// въведена е командата open
-		// отваряме и четем файл
 		char fileName[MAX];
 		if (!moveInput(input))
 			std::cout << "Leave space between "
@@ -58,7 +55,7 @@ int excel()
 			std::cout << "No such file exists. Open another one.\n";
 			continue;
 		}
-		// файлът е отворен и можем да четем от него
+
 		std::cout << "Successfully opened " << fileName << "\n";
 		Excel e;
 		do {
